@@ -1,4 +1,4 @@
-import { GreetingService, ProvideNamePrimaryPort } from "../business/greeting-service"
+import { ProvideNamePrimaryPort } from "../business/greeting-service"
 
 export function runArgsApp(greetingService: ProvideNamePrimaryPort) {
     const [,,name] = process.argv;
