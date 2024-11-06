@@ -1,5 +1,12 @@
 @host = http://localhost:4400
 
 ###
-
 GET {{host}}/hello
+
+###
+POST {{host}}/greet
+Content-Type: application/json
+
+{
+    "name": "Jason"
+}
