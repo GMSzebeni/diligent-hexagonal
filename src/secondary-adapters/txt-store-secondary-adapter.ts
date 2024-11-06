@@ -2,13 +2,13 @@ import { StoreGreetingSecondaryPort } from "../business/greeting-service";
 import { FileStore } from "../file-store";
 
 export class TxtStoreSecondaryAdapter implements StoreGreetingSecondaryPort {
-    private readonly store: FileStore<string>;
+    private readonly store: FileStore;
 
-    constructor(store: FileStore<string>) {
+    constructor(store: FileStore) {
         this.store = store;
     }
     
-    save(name: string) {
-        this.store.write(`Saved: ${name}`);
+    async save(greeting: string) {
+        await this.store.write(`Saved: ${greeting}`);
     }
 }
