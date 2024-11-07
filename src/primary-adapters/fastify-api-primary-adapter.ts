@@ -1,8 +1,8 @@
 import fastify from 'fastify';
 import { JsonSchemaToTsProvider } from '@fastify/type-provider-json-schema-to-ts'
-import { GreetingService } from '../business/greeting-service';
+import { GreetingService, ProvideNamePrimaryPort } from '../business/greeting-service';
 
-export default function createApp(options = {}, greetingService: GreetingService) {
+export default function createApp(options = {}, greetingService: ProvideNamePrimaryPort) {
   const app = fastify(options).withTypeProvider<JsonSchemaToTsProvider>();
 
   const postGreetingSchema = {
